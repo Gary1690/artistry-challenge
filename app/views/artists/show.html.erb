@@ -1,0 +1,12 @@
+<h1><%=@artist.name%><h1>
+<h2><%=@artist.title%><h2>
+
+<% if !@artist.instruments.empty?%>
+  <ul>
+  <%@artist.instruments.each do |instrument|%>
+    <li><%= link_to  instrument.name, instrument %></li>
+  <%end%>
+  </ul>
+<%else%>
+  <p>This artist doesn't play any instruments, but has a heavenly voice</p>
+<%end%>

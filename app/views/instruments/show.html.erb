@@ -1,0 +1,13 @@
+<h1><%=@instrument.name%></h1>
+<h2>classification: <%=@instrument.classification%></h2>
+
+<% if !@instrument.artists.empty?%>
+  <h4>Artists playing this instrument</h4>
+  <ul>
+  <%@instrument.artists.each do |a|%>
+    <li><%= link_to  a.name, a %></li>
+  <%end%>
+  </ul>
+<%else%>
+  <p>There are no artist in the studio that plays this instrument yet! T.T </p>
+<%end%>

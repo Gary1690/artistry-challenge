@@ -1,0 +1,16 @@
+<%= form_for( @artist , remote: true) do |f| %>
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <%=f.label :title%>
+  <%=f.text_field :title%>
+  <%=f.label :age%>
+  <%=f.text_field :age%>
+  <%2.times do%>
+  <select name="artist[instruments_id][]">
+    <%@instruments.each do |i|%>
+      <option value="<%=i.id%>"><%=i.name_and_classification%></option>
+    <%end%>
+  </select>
+  <%end%>
+  <%=f.submit%>
+<% end %>
